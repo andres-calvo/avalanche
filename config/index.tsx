@@ -20,7 +20,8 @@ export const wagmiAdapter = new WagmiAdapter({
     }),
     ssr: true,
     projectId,
-    networks
+    networks,
+    // siweConfig: siweConfig // pass your siweConfig
 })
 
 export const config = wagmiAdapter.wagmiConfig
