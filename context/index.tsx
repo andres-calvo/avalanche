@@ -31,7 +31,7 @@ const modal = createAppKit({
     defaultNetwork: mainnet,
     metadata: metadata,
     features: {
-        analytics: true, // Optional - defaults to your Cloud configuration,
+        analytics: false, // Optional - defaults to your Cloud configuration,
         email: true,
         socials: ["google", "github", "x", "discord"],
         emailShowWallets: true

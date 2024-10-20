@@ -1,11 +1,21 @@
 "use client";
-import { useAccount } from "wagmi";
+
+import { Navbar } from "@/components/shared/navbar";
+import TrendingCollection from "./trending-collection";
+import TopCreators from "./top-creators";
+import { HomeBanner } from "./home-banner";
+import { NftsHome } from "./nfts-home";
+import DiscoverNFTs from "./discover-nft";
+
 export default function Home() {
-  const { isConnected } = useAccount()
-  console.log(isConnected)
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <w3m-button />
+    <div className="min-h-screen bg-black text-white">
+      <Navbar />
+      <HomeBanner />
+      <TrendingCollection />
+      <TopCreators />
+      <NftsHome />
+      <DiscoverNFTs />
     </div>
   );
 }

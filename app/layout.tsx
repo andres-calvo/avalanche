@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import ContextProvider from '@/context';
+import { MuseoModerno, Work_Sans } from 'next/font/google';
+// import ContextProvider from '@/context';
 import "./globals.css";
-import { headers } from "next/headers";
+// import { headers } from "next/headers";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+const museoModerno = MuseoModerno({ subsets: ['latin'], variable: '--font-museo-moderno' })
+const workSans = Work_Sans({ subsets: ['latin'], variable: '--font-work-sans' })
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,13 +19,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookies = headers().get('cookie')
+  // const cookies = headers().get('cookie')
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${museoModerno.variable} ${workSans.variable} antialiased`}
       >
-        <ContextProvider cookies={cookies}>{children}</ContextProvider>
+        {children}
+        {/* <ContextProvider cookies={cookies}>{children}</ContextProvider> */}
       </body>
     </html>
   );
